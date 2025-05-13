@@ -7,31 +7,44 @@ const ExercisePage = () => {
   const exercise = exercises.find((ex) => ex.id === id);
 
   if (!exercise) {
-    return <div style={{ padding: 24 }}>Exercise not found.</div>;
+    return <div className="card">Exercise not found.</div>;
   }
 
   return (
-    <div style={{ maxWidth: 500, margin: "0 auto", padding: 24 }}>
+    <div className="card">
       <h1>{exercise.name}</h1>
-      <div style={{ marginBottom: 16 }}>
+      <div
+        style={{
+          marginBottom: 16,
+          position: "relative",
+          paddingBottom: "56.25%",
+          height: 0,
+          overflow: "hidden",
+        }}
+      >
         <iframe
-          width="100%"
-          height="280"
+          style={{
+            position: "absolute",
+            top: 0,
+            left: 0,
+            width: "100%",
+            height: "100%",
+            border: "none",
+          }}
           src={exercise.videoUrl}
           title={exercise.name}
-          frameBorder="0"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
           allowFullScreen
         ></iframe>
       </div>
       <h2>Instructions</h2>
-      <ol>
+      <ol className="instructions-list">
         {exercise.instructions.map((step, idx) => (
           <li key={idx}>{step}</li>
         ))}
       </ol>
       <h2>Muscles Worked</h2>
-      <ul>
+      <ul className="muscles-list">
         {exercise.musclesWorked.map((muscle, idx) => (
           <li key={idx}>{muscle}</li>
         ))}

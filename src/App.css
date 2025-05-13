@@ -1,38 +1,130 @@
-.App {
-  text-align: center;
+:root {
+  --cream: #fdf6ee;
+  --dark-purple: #3d0066;
+  --grey: #888888;
+  --accent-shadow: 0 2px 8px rgba(61, 0, 102, 0.08);
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body {
+  background: var(--cream);
+  margin: 0;
+  font-family: "Inter", Arial, sans-serif;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.app-header {
   display: flex;
-  flex-direction: column;
   align-items: center;
+  gap: 1rem;
+  padding: 2rem 0 1.5rem 0;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+}
+.brand-logo {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(61, 0, 102, 0.1);
+}
+.logo-text {
+  font-size: 2rem;
+  font-weight: bold;
+  color: var(--dark-purple);
+  letter-spacing: 2px;
 }
 
-.App-link {
-  color: #61dafb;
+.card {
+  background: #fff;
+  border-radius: 1.2rem;
+  box-shadow: var(--accent-shadow);
+  padding: 2rem 1.5rem;
+  margin-bottom: 2rem;
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.exercise-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.exercise-list li {
+  margin-bottom: 1.2rem;
+}
+.exercise-link {
+  color: var(--dark-purple);
+  font-weight: 600;
+  font-size: 1.15rem;
+  text-decoration: none;
+  border-bottom: 2px solid var(--dark-purple);
+  padding-bottom: 2px;
+  transition: color 0.2s, border-color 0.2s;
+}
+.exercise-link:hover {
+  color: #5a189a;
+  border-color: #5a189a;
+}
+
+h1,
+h2 {
+  color: var(--dark-purple);
+  margin-top: 0;
+}
+
+.instructions-list {
+  padding-left: 1.2rem;
+}
+.muscles-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  padding: 0;
+  list-style: none;
+}
+.muscles-list li {
+  background: #f3e6ff;
+  color: var(--dark-purple);
+  border-radius: 1rem;
+  padding: 0.3rem 1rem;
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+@media (max-width: 600px) {
+  .card {
+    padding: 1.5rem 1rem;
+    margin: 0 1rem 1.5rem 1rem;
+    max-width: none;
   }
-  to {
-    transform: rotate(360deg);
+  .app-header {
+    flex-direction: column;
+    gap: 0.5rem;
+    padding: 1.2rem 1rem 1rem 1rem;
+  }
+  .brand-logo {
+    width: 38px;
+    height: 38px;
+  }
+  .logo-text {
+    font-size: 1.3rem;
+  }
+  h1 {
+    font-size: 1.5rem;
+  }
+  h2 {
+    font-size: 1.2rem;
+  }
+  .exercise-link {
+    font-size: 1rem;
+  }
+  .muscles-list li {
+    font-size: 0.9rem;
+    padding: 0.25rem 0.8rem;
+  }
+  .instructions-list {
+    padding-left: 1rem;
+  }
+  .instructions-list li {
+    margin-bottom: 0.8rem;
+    font-size: 0.95rem;
   }
 }
